@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon | Khanwani</title>
+    <title>Khanwani | Coming Soon</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap">
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <img src="Khanwani-logo.png" alt="Khanwani Logo" class="logo">
-            <h1>Coming Soon</h1>
-            <p class="tagline">Reviving the Rich Cultural Legacy of Kashmir</p>
-            <div class="countdown">
-                <span id="timer">00d 00h 00m 00s</span>
+    <div class="luxury-container">
+        <div class="luxury-content">
+            <img src="Khanwani-logo.png" alt="Khanwani Logo" class="luxury-logo">
+            <h1 class="luxury-title">Something Extraordinary is Coming</h1>
+            <p class="luxury-tagline">Reviving the Rich Cultural Legacy of Kashmir</p>
+
+            <div class="luxury-countdown">
+                Launching In: <span id="luxury-timer">00d 00h 00m 00s</span>
             </div>
-            <form>
-                <input type="email" placeholder="Enter your email to stay updated" required>
+
+            <form class="luxury-form">
+                <input type="email" placeholder="Enter your email for exclusive updates" required>
                 <button type="submit">Notify Me</button>
             </form>
         </div>
     </div>
+
     <script>
         const launchDate = new Date("2025-08-27T00:00:00").getTime();
+
         const timer = setInterval(() => {
             const now = new Date().getTime();
             const timeLeft = launchDate - now;
 
             if (timeLeft < 0) {
-                document.getElementById("timer").textContent = "We're Almost Here!";
+                document.getElementById("luxury-timer").textContent = "We're Almost Here!";
                 clearInterval(timer);
                 return;
             }
@@ -39,9 +43,8 @@
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            document.getElementById("luxury-timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }, 1000);
     </script>
 </body>
 </html>
-
