@@ -3,125 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon | Khanwani</title>
+    <title>Khanwani | Coming Soon</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap">
 </head>
 <body>
-
-<div class="container">
-    <!-- Logo Section -->
-    <img src="Khanwani-logo.png" alt="Khanwani Logo" class="logo">
-
-    <!-- Tagline Section -->
-    <p class="tagline">Reviving the Rich Cultural Legacy of Kashmir</p>
-
-    <!-- Coming Soon Section -->
-    <h1>Coming Soon</h1>
-    <p>We're working hard to launch our new website. Stay tuned!</p>
-
-    <div class="countdown">
-        Time Remaining: <span id="timer">Loading...</span>
+    <div class="container">
+        <div class="content">
+            <img src="Khanwani-logo.png" alt="Khanwani Logo" class="logo">
+            <h1>Coming Soon</h1>
+            <p class="tagline">Reviving the Rich Cultural Legacy of Kashmir</p>
+            <div class="countdown">
+                <span id="timer">00d 00h 00m 00s</span>
+            </div>
+            <form>
+                <input type="email" placeholder="Enter your email to stay updated" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
     </div>
+    <script>
+        const launchDate = new Date("2024-01-15T00:00:00").getTime();
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
 
-    <form>
-        <input type="email" placeholder="Enter your email for updates" required>
-        <button type="submit">Notify Me</button>
-    </form>
-</div>
+            if (timeLeft < 0) {
+                document.getElementById("timer").textContent = "We're Almost Here!";
+                clearInterval(timer);
+                return;
+            }
 
-<script>
-    const launchDate = new Date("2024-01-15T00:00:00").getTime();
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    const timer = setInterval(() => {
-        const now = new Date().getTime();
-        const timeLeft = launchDate - now;
-
-        if (timeLeft <= 0) {
-            document.getElementById("timer").textContent = "Thank you for your patience!";
-            clearInterval(timer); // Stop the timer
-            return;
-        }
-
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-        document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
-</script>
-
+            document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+    </script>
 </body>
 </html>
-
-/* CSS FILE (styles.css) */
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #04215b;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.container {
-    text-align: center;
-    padding: 40px;
-}
-
-.logo {
-    width: 250px; /* Increased logo size */
-    margin-bottom: 30px;
-}
-
-h1 {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.tagline {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    font-style: italic;
-    font-weight: 600;
-    color: #FFD700;
-}
-
-.countdown {
-    font-size: 1.6rem;
-    margin: 20px 0;
-}
-
-form {
-    margin-top: 30px;
-}
-
-input {
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 5px;
-    background: #FFD700;
-    color: #04215b;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #FFA500;
-}
