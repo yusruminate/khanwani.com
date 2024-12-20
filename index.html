@@ -3,57 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khanwani | Coming Soon</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <title>Coming Soon | Khanwani</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #04215b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #04215b;
+        }
+    </style>
 </head>
 <body>
-    <div class="luxury-container">
-        <nav class="luxury-nav">
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="luxury-content">
-            <img src="Khanwani-logo.png" alt="Khanwani Logo" class="luxury-logo">
-            <h1>Coming Soon</h1>
-            <p class="luxury-tagline">Reviving the Rich Cultural Legacy of Kashmir</p>
-            <div class="luxury-countdown">
-                Launching In: <span id="luxury-timer">00d 00h 00m 00s</span>
-            </div>
-        </div>
-        <footer class="luxury-footer">
-            <p>&copy; 2025 Khanwani. All Rights Reserved.</p>
-            <div class="social-icons">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-            </div>
-        </footer>
+    <div>
+        <img src="Khanwani-logo.png" alt="Khanwani Logo" class="logo">
+        <h1>Coming Soon</h1>
     </div>
-
-    <script>
-        const launchDate = new Date("2025-08-27T00:00:00").getTime();
-
-        const timer = setInterval(() => {
-            const now = new Date().getTime();
-            const timeLeft = launchDate - now;
-
-            if (timeLeft < 0) {
-                document.getElementById("luxury-timer").textContent = "We're Almost Here!";
-                clearInterval(timer);
-                return;
-            }
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById("luxury-timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }, 1000);
-    </script>
 </body>
 </html>
-
-
-
