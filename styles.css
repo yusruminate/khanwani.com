@@ -2,56 +2,84 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #1c1c1c, #353535);
+    background: url('background.jpg') no-repeat center center/cover;
     color: #fff;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
 .luxury-container {
     text-align: center;
-    max-width: 600px;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+.luxury-nav {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    font-size: 1rem;
+}
+
+.luxury-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.luxury-nav a:hover {
+    color: #ffd700;
 }
 
 .luxury-logo {
-    width: 200px;
-    margin-bottom: 20px;
+    width: 150px;
+    margin: 20px auto;
+    opacity: 0.9;
 }
 
-.luxury-title {
+h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: #fff;
     margin-bottom: 10px;
-    color: #ffd700;
 }
 
 .luxury-tagline {
     font-size: 1.2rem;
-    margin-bottom: 30px;
     font-style: italic;
-    color: #ffffff;
+    color: #ffd700;
+    margin-bottom: 30px;
 }
 
 .luxury-countdown {
     font-size: 1.4rem;
-    font-weight: bold;
     margin-bottom: 30px;
+    color: #fff;
+    letter-spacing: 2px;
 }
 
-.social-icons a {
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer .social-icons a {
     margin: 0 10px;
-    color: #ffd700;
+    color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
-    color: #e5c100;
+footer .social-icons a:hover {
+    color: #ffd700;
 }
