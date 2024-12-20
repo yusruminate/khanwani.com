@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon | Khanwani</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap">
 </head>
 <body>
 
@@ -37,9 +37,9 @@
         const now = new Date().getTime();
         const timeLeft = launchDate - now;
 
-        if (timeLeft < 0) {
-            document.getElementById("timer").textContent = "We're Live!";
-            clearInterval(timer);
+        if (timeLeft <= 0) {
+            document.getElementById("timer").textContent = "Thank you for your patience!";
+            clearInterval(timer); // Stop the timer
             return;
         }
 
@@ -54,3 +54,74 @@
 
 </body>
 </html>
+
+/* CSS FILE (styles.css) */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #04215b;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+}
+
+.logo {
+    width: 250px; /* Increased logo size */
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tagline {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-style: italic;
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.countdown {
+    font-size: 1.6rem;
+    margin: 20px 0;
+}
+
+form {
+    margin-top: 30px;
+}
+
+input {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    background: #FFD700;
+    color: #04215b;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #FFA500;
+}
